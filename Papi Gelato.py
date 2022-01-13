@@ -1,5 +1,3 @@
-from test import bakjeofhoorntje
-
 
 meerbestellen = 'j'
 abakje = 0
@@ -122,7 +120,6 @@ def verderbestellen():
             print("Sorry, dat snap ik niet...")
 
 def bonnetje():
-    while particulier == 'j' and zakelijk == 'n':
         if particulier == 'j' and zakelijk == 'n':
             input("Druk op enter om uw bonnetje te zien.")
 
@@ -150,7 +147,7 @@ def bonnetje():
 
 
             euroliter = bolletjes * 9.80
-            btw = euroliter / 100 * 9
+            btw = euroliter / 100 * 6
             print("---------[ Papi Gelato ]---------")
             print("""
             """)
@@ -159,31 +156,28 @@ def bonnetje():
             print("""
                                 -------- +""")  
             print(f"Totaal                    = € {round(euroliter, 2)}")
-            print(f"BTW (9%)                  = € {round(btw, 2)}")
-            
-
+            print(f"BTW (6%)                  = € {round(btw, 2)}")
             
 
 # einde
+vrzakelijk = parofzakelijk()
 if particulier == 'j' and zakelijk == 'n':
     while particulier == 'j' and zakelijk == 'n':
         if particulier == 'j':
-            vrzakelijk = parofzakelijk()
             bolletjes = ijs()
             smaak = smaken()
             bakhoorn = bakjehoorntje()
             topping = toppings()
-            meerbestellen = verderbestellen()
+            particulier = verderbestellen()
+    particulier = 'j'
     bonnetje()
-if particulier == 'n' and zakelijk == 'j':
-    while particulier == 'n' and zakelijk == 'j':
-        if zakelijk == 'j':
-            vrzakelijk = parofzakelijk()
-            bolletjes = ijs()
-            smaak = smaken()
-            bonnetje()
+    particulier = 'n'
+elif particulier == 'n' and zakelijk == 'j':
+    if zakelijk == 'j':
+        bolletjes = ijs()
+        smaak = smaken()
+        bonnetje()
 
-  
 input("Druk op enter om het aftesluiten")
 
 
